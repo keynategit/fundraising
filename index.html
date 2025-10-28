@@ -35,14 +35,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .slide.active {
             opacity: 1;
             transform: translateY(0);
+            transition: none; /* Remove transition for slides */
         }
+       
         /* ===== PROGRESS BAR STYLES ===== */
         .progress-bar {
             height: 4px;
@@ -57,10 +54,12 @@
             width: 0%;
             transition: width 0.3s ease;
         }
+       
         /* ===== ICON STYLES ===== */
         .icon-bg {
             background: linear-gradient(135deg, #2563eb, #7c3aed);
         }
+       
         /* ===== DROPDOWN MENU STYLES ===== */
         .dropdown-menu {
             display: none;
@@ -93,6 +92,7 @@
             background-color: #f3f4f6;
             color: #2563eb;
         }
+       
         /* ===== NAVIGATION DOTS STYLES ===== */
         .nav-indicator {
             position: fixed;
@@ -118,6 +118,7 @@
         .nav-dot:hover {
             background-color: #93c5fd;
         }
+       
         /* ===== ANIMATION STYLES ===== */
         .fade-in {
             animation: fadeIn 0.8s ease-in-out;
@@ -126,6 +127,7 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+       
         /* ===== NAVIGATION BUTTON STYLES ===== */
         .nav-btn {
             cursor: pointer;
@@ -135,14 +137,17 @@
             background-color: #2563eb;
             color: white;
         }
+       
         /* ===== SMOOTH SCROLLING ===== */
         html {
             scroll-behavior: smooth;
         }
+       
         /* ===== FIXED NAVIGATION ISSUE ===== */
         .nav-btn, .nav-dot, .dropdown-item {
             transition: all 0.2s ease;
         }
+       
         /* ===== RESPONSIVE NAVBAR STYLES ===== */
         .responsive-nav {
             display: flex;
@@ -165,9 +170,26 @@
                 display: none;
             }
         }
+       
+        /* ===== IMPROVED SMOOTH SCROLLING ===== */
+        .snap-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .snap-slide {
+            scroll-snap-align: start;
+        }
+       
+        /* ===== DISABLE ANIMATIONS ON SCROLL ===== */
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
     </style>
 </head>
-<body class="bg-light font-sans text-dark">
+<body class="bg-light font-sans text-dark snap-container">
     <!-- Navigation & Progress -->
     <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -192,7 +214,7 @@
                     <button class="nav-btn px-3 py-1 rounded-full text-sm transition-all" data-slide="11">Vision</button>
                     <button class="nav-btn px-3 py-1 rounded-full text-sm transition-all" data-slide="12">CTA</button>
                 </div>
-                
+               
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden relative">
                     <button id="mobile-menu-btn" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
@@ -216,7 +238,7 @@
                         <button class="dropdown-item" data-slide="12">Call to Action</button>
                     </div>
                 </div>
-                
+               
                 <div class="text-sm text-gray-500" style="white-space: nowrap;">
                     <span id="current-slide">1</span> / <span id="total-slides">13</span>
                 </div>
@@ -226,7 +248,6 @@
             <div class="progress-fill" id="progress-fill"></div>
         </div>
     </div>
-
     <!-- Navigation Dots -->
     <div class="nav-indicator hidden lg:block">
         <button class="nav-dot" data-slide="0"></button>
@@ -243,11 +264,10 @@
         <button class="nav-dot" data-slide="11"></button>
         <button class="nav-dot" data-slide="12"></button>
     </div>
-
     <!-- Slides Container -->
     <div class="slides-container">
         <!-- Slide 1: Intro / Elevator Pitch -->
-        <section id="slide-0" class="slide active">
+        <section id="slide-0" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl text-center px-4">
                 <div class="w-20 h-20 rounded-2xl icon-bg flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">K</div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Keynate</h1>
@@ -260,9 +280,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 2: Problem -->
-        <section id="slide-1" class="slide">
+        <section id="slide-1" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
@@ -290,9 +309,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 3: Solution -->
-        <section id="slide-2" class="slide">
+        <section id="slide-2" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
@@ -329,9 +347,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 4: Product Demo / MVP Validation -->
-        <section id="slide-3" class="slide">
+        <section id="slide-3" class="slide snap-slide">
             <div class="container mx-auto max-w-5xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mr-4">
@@ -339,7 +356,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Product Demo</h2>
                 </div>
-                
+               
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
                     <div class="bg-gray-800 py-3 px-4 flex items-center">
                         <div class="flex space-x-2">
@@ -361,7 +378,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">MVP Validation</h3>
@@ -393,9 +410,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 5: Market Opportunity -->
-        <section id="slide-4" class="slide">
+        <section id="slide-4" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
@@ -403,7 +419,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Market Opportunity</h2>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                         <div class="text-3xl font-bold text-primary mb-2">$42B</div>
@@ -418,7 +434,7 @@
                         <div class="text-gray-600">Target Businesses</div>
                     </div>
                 </div>
-                
+               
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
                     <h3 class="text-xl font-semibold mb-4">Target Market Segments</h3>
                     <div class="grid md:grid-cols-2 gap-4">
@@ -440,16 +456,15 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
                     <h3 class="text-lg font-semibold mb-2">Our Approach</h3>
                     <p class="text-gray-700">We're targeting the underserved mid-market segment with a solution that balances enterprise-grade capabilities with ease of use and affordability.</p>
                 </div>
             </div>
         </section>
-
         <!-- Slide 6: Business Model -->
-        <section id="slide-5" class="slide">
+        <section id="slide-5" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
@@ -457,7 +472,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Business Model</h2>
                 </div>
-                
+               
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
                     <h3 class="text-2xl font-bold mb-6 text-center">SaaS Subscription Tiers</h3>
                     <div class="grid md:grid-cols-3 gap-6">
@@ -499,7 +514,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Revenue Streams</h3>
@@ -544,9 +559,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 7: Traction -->
-        <section id="slide-6" class="slide">
+        <section id="slide-6" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mr-4">
@@ -554,7 +568,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Traction</h2>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Customer Growth</h3>
@@ -591,7 +605,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-2xl">
                     <h3 class="text-xl font-semibold mb-4">Customer Testimonials</h3>
                     <div class="grid md:grid-cols-2 gap-6">
@@ -607,9 +621,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 8: Team -->
-        <section id="slide-7" class="slide">
+        <section id="slide-7" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center text-pink-600 mr-4">
@@ -617,7 +630,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Our Team</h2>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                         <div class="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-secondary mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold">AJ</div>
@@ -638,16 +651,15 @@
                         <p class="text-gray-600 text-sm">Scaled sales teams at two successful SaaS startups.</p>
                     </div>
                 </div>
-                
+               
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
                     <h3 class="text-lg font-semibold mb-2">Advisory Board</h3>
                     <p class="text-gray-700">Our advisors include industry veterans from leading tech companies and successful entrepreneurs with multiple exits.</p>
                 </div>
             </div>
         </section>
-
         <!-- Slide 9: Competition -->
-        <section id="slide-8" class="slide">
+        <section id="slide-8" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 mr-4">
@@ -655,7 +667,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Competitive Landscape</h2>
                 </div>
-                
+               
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
                     <h3 class="text-xl font-semibold mb-4">Market Position</h3>
                     <div class="overflow-x-auto">
@@ -743,7 +755,7 @@
                         </table>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Our Advantages</h3>
@@ -782,9 +794,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 10: Financials & Projections -->
-        <section id="slide-9" class="slide">
+        <section id="slide-9" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 mr-4">
@@ -792,7 +803,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Financials & Projections</h2>
                 </div>
-                
+               
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
                     <h3 class="text-xl font-semibold mb-4">3-Year Financial Projections</h3>
                     <div class="overflow-x-auto">
@@ -834,7 +845,7 @@
                         </table>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Use of Funds</h3>
@@ -901,9 +912,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 11: Funding Ask -->
-        <section id="slide-10" class="slide">
+        <section id="slide-10" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600 mr-4">
@@ -911,7 +921,7 @@
                     </div>
                     <h2 class="text-3xl font-bold">Funding Ask</h2>
                 </div>
-                
+               
                 <div class="bg-gradient-to-br from-primary to-secondary text-white p-8 rounded-2xl mb-8 text-center">
                     <h3 class="text-3xl font-bold mb-4">$2M Seed Round</h3>
                     <p class="text-xl opacity-90 mb-6">To accelerate product development and expand our market presence</p>
@@ -930,7 +940,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Milestones to Achieve</h3>
@@ -981,9 +991,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 12: Vision / The Future -->
-        <section id="slide-11" class="slide">
+        <section id="slide-11" class="slide snap-slide">
             <div class="container mx-auto max-w-4xl px-4">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center text-violet-600 mr-4">
@@ -991,11 +1000,11 @@
                     </div>
                     <h2 class="text-3xl font-bold">Vision / The Future</h2>
                 </div>
-                
+               
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
                     <h3 class="text-2xl font-bold mb-6 text-center">Our Long-Term Vision</h3>
                     <p class="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">To become the operating system for modern businesses, where Keynate intelligently automates not just tasks, but entire business functions, enabling organizations to focus on innovation and growth.</p>
-                    
+                   
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="text-center">
                             <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mx-auto mb-4">
@@ -1026,7 +1035,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Expansion Strategy</h3>
@@ -1065,14 +1074,13 @@
                 </div>
             </div>
         </section>
-
         <!-- Slide 13: Call to Action -->
-        <section id="slide-12" class="slide">
+        <section id="slide-12" class="slide snap-slide">
             <div class="container mx-auto max-w-3xl text-center px-4">
                 <div class="w-20 h-20 rounded-2xl icon-bg flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">K</div>
                 <h2 class="text-4xl font-bold mb-6">Join Us in Revolutionizing Business Automation</h2>
                 <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">We're looking for strategic partners who share our vision and want to be part of our growth journey.</p>
-                
+               
                 <div class="grid md:grid-cols-2 gap-6 max-w-xl mx-auto mb-10">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h3 class="text-lg font-semibold mb-2">Investment Opportunity</h3>
@@ -1085,14 +1093,13 @@
                         <button class="bg-secondary text-white py-2 px-4 rounded-lg w-full font-medium hover:bg-purple-700 transition-colors">Contact Us</button>
                     </div>
                 </div>
-                
+               
                 <div class="text-gray-500">
                     <p>Keynate Inc. • contact@keynate.com • (415) 123-4567</p>
                 </div>
             </div>
         </section>
     </div>
-
     <!-- Navigation Controls -->
     <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4">
         <button id="prev-btn" class="bg-white shadow-md rounded-full w-12 h-12 flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors">
@@ -1106,7 +1113,6 @@
             </svg>
         </button>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.slide');
@@ -1121,37 +1127,29 @@
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuItems = document.querySelectorAll('.dropdown-item');
-            
+           
             let currentSlide = 0;
-            let isScrolling = false;
             let scrollTimeout;
-            
+           
             // Set total slides count
             totalSlidesElement.textContent = totalSlides;
-            
-            function updateSlide(slideIndex) {
-                // Update current slide
+           
+            function updateProgressAndCounter(slideIndex) {
                 currentSlide = slideIndex;
-                
-                // Hide all slides
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                
-                // Show current slide
-                slides[currentSlide].classList.add('active');
-                
+               
                 // Update progress bar
                 progressFill.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
-                
+               
                 // Update current slide indicator
                 currentSlideElement.textContent = currentSlide + 1;
-                
+               
                 // Update navigation buttons state
                 prevBtn.disabled = currentSlide === 0;
                 nextBtn.disabled = currentSlide === totalSlides - 1;
-                
-                // Update nav buttons active state - FIXED: Directly set active state
+            }
+           
+            function updateNavActives() {
+                // Update nav buttons active state
                 navButtons.forEach(btn => {
                     const slideIndex = parseInt(btn.getAttribute('data-slide'));
                     if (slideIndex === currentSlide) {
@@ -1160,7 +1158,7 @@
                         btn.classList.remove('active');
                     }
                 });
-                
+               
                 // Update nav dots active state
                 navDots.forEach(dot => {
                     const slideIndex = parseInt(dot.getAttribute('data-slide'));
@@ -1170,7 +1168,7 @@
                         dot.classList.remove('active');
                     }
                 });
-                
+               
                 // Update mobile menu items active state
                 mobileMenuItems.forEach(item => {
                     const slideIndex = parseInt(item.getAttribute('data-slide'));
@@ -1181,56 +1179,77 @@
                     }
                 });
             }
-            
+           
+            function updateSlide(slideIndex) {
+                updateProgressAndCounter(slideIndex);
+                updateNavActives();
+            }
+           
             function scrollToSlide(slideIndex) {
                 if (slideIndex >= 0 && slideIndex < totalSlides) {
                     const slide = slides[slideIndex];
                     const slideTop = slide.offsetTop;
-                    
+                   
+                    // Immediately update progress and counter
+                    updateProgressAndCounter(slideIndex);
+                   
+                    // Immediately remove all active states to avoid in-transit visuals
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    navDots.forEach(dot => dot.classList.remove('active'));
+                    mobileMenuItems.forEach(item => item.classList.remove('active'));
+                   
                     // Use smooth scrolling with improved performance
                     window.scrollTo({
                         top: slideTop,
                         behavior: 'smooth'
                     });
-                    
-                    updateSlide(slideIndex);
+                   
+                    // Clear any existing timeout
+                    if (window.activeTimeout) {
+                        clearTimeout(window.activeTimeout);
+                    }
+                   
+                    // Delay adding the active state by 0.5 seconds to avoid seeing in-transit backgrounds
+                    window.activeTimeout = setTimeout(() => {
+                        updateNavActives();
+                    }, 10);
                 }
             }
-            
+           
             function nextSlide() {
                 if (currentSlide < totalSlides - 1) {
                     scrollToSlide(currentSlide + 1);
                 }
             }
-            
+           
             function prevSlide() {
                 if (currentSlide > 0) {
                     scrollToSlide(currentSlide - 1);
                 }
             }
-            
+           
             function goToSlide(slideIndex) {
                 scrollToSlide(slideIndex);
             }
-            
+           
             // Event listeners for navigation buttons
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
-            
+           
             // Navigation buttons
             navButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     goToSlide(parseInt(this.getAttribute('data-slide')));
                 });
             });
-            
+           
             // Navigation dots
             navDots.forEach(dot => {
                 dot.addEventListener('click', function() {
                     goToSlide(parseInt(this.getAttribute('data-slide')));
                 });
             });
-            
+           
             // Mobile menu items
             mobileMenuItems.forEach(item => {
                 item.addEventListener('click', function() {
@@ -1238,19 +1257,19 @@
                     mobileMenu.classList.remove('show');
                 });
             });
-            
+           
             // Mobile menu toggle
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.toggle('show');
             });
-            
+           
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
                     mobileMenu.classList.remove('show');
                 }
             });
-            
+           
             // Keyboard navigation
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'ArrowRight') {
@@ -1259,33 +1278,28 @@
                     prevSlide();
                 }
             });
-            
-            // Improved scroll-based navigation
-            let scrollThrottleTimeout;
+           
+            // Debounced scroll-based navigation for natural scrolling (with shorter debounce to detect end quickly)
             window.addEventListener('scroll', function() {
-                if (!scrollThrottleTimeout) {
-                    scrollThrottleTimeout = setTimeout(function() {
-                        scrollThrottleTimeout = null;
-                        
-                        // Find which slide is currently in view
-                        const scrollPosition = window.scrollY + (window.innerHeight / 2);
-                        
-                        for (let i = 0; i < slides.length; i++) {
-                            const slide = slides[i];
-                            const slideTop = slide.offsetTop;
-                            const slideBottom = slideTop + slide.offsetHeight;
-                            
-                            if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
-                                if (i !== currentSlide) {
-                                    updateSlide(i);
-                                }
-                                break;
-                            }
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    // Find which slide is currently in view using getBoundingClientRect for accuracy
+                    let newSlide = -1;
+                    for (let i = 0; i < slides.length; i++) {
+                        const slide = slides[i];
+                        const rect = slide.getBoundingClientRect();
+                        const midWindow = window.innerHeight / 2;
+                        if (rect.top <= midWindow && rect.bottom >= midWindow) {
+                            newSlide = i;
+                            break;
                         }
-                    }, 100);
-                }
+                    }
+                    if (newSlide !== -1 && newSlide !== currentSlide) {
+                        updateSlide(newSlide);
+                    }
+                }, 150);  // 150ms debounce for natural scroll to reduce flicker without excessive delay
             }, { passive: true });
-            
+           
             // Initialize
             updateSlide(0);
         });
