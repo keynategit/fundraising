@@ -295,7 +295,7 @@
       </p>
 
       <p>
-        In one click, users can launch production-grade platforms on their own VPS — fully optimized, secure, and live in minutes.
+        In <b>one click</b>, users can launch production-grade platforms on their own VPS — fully optimized, secure, and live in minutes.
       </p>
 
       <p>
@@ -791,311 +791,178 @@
 
 
 
-<!-- Slide 9: Competitive Landscape (Investor-focused, Responsive, Tailwind) -->
-<section id="slide-8" class="slide snap-slide bg-gray-50 py-12">
+<!-- Competitive Comparison: Focused & Investor-Ready -->
+<section id="slide-8" class="slide snap-slide bg-gradient-to-br from-white to-gray-50 py-16">
   <div class="container mx-auto max-w-7xl px-4">
     <!-- Header -->
-    <div class="flex items-center mb-6">
-      <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 mr-4 text-xl">⚔️</div>
-      <h2 class="text-2xl md:text-3xl font-bold">Competitive Landscape — Investor View</h2>
+    <div class="flex items-center mb-8">
+      <div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4 text-xl">⚔️</div>
+      <h2 class="text-3xl font-bold text-gray-900">Competitive Comparison</h2>
     </div>
 
     <!-- Legend -->
-    <div class="flex gap-4 items-center text-sm text-gray-600 mb-4">
-      <div class="flex items-center gap-2"><span class="text-green-600">✅</span> Native & Productized</div>
-      <div class="flex items-center gap-2"><span class="text-amber-500">⚠️</span> Partial / Plugin</div>
-      <div class="flex items-center gap-2"><span class="text-red-500">❌</span> None / Not relevant</div>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-6">
+      <div class="flex items-center gap-2"><span class="text-green-600">✅</span> Strong</div>
+      <div class="flex items-center gap-2"><span class="text-amber-500">⚠️</span> Moderate</div>
+      <div class="flex items-center gap-2"><span class="text-red-500">❌</span> Weak / Missing</div>
     </div>
 
-    <!-- Desktop table -->
-    <div class="hidden md:block bg-white rounded-2xl shadow border border-gray-100 overflow-x-auto relative">
+    <style>
+      .sticky-col { position: sticky; background: white; z-index: 30; }
+      .sticky-feature { left: 0; min-width: 220px; }
+      .sticky-keynate { left: 220px; min-width: 230px; border-left: 1px solid #eef2f6; border-right: 1px solid #eef2f6; }
+      table tr:hover td { background-color: #f9fafb; transition: 0.2s; }
+      .col-compact { min-width: 160px; }
+    </style>
+
+    <!-- Comparison Table -->
+    <div class="hidden md:block bg-white rounded-2xl shadow-lg border border-gray-100 overflow-x-auto relative">
       <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white pointer-events-none"></div>
 
-      <style>
-        .sticky-col { position: sticky; background: white; z-index: 30; }
-        .sticky-feature { left: 0; min-width: 220px; }
-        .sticky-keynate { left: 220px; min-width: 230px; border-left: 1px solid #eef2f6; border-right: 1px solid #eef2f6; }
-        table tr:hover td { background-color: #fbfdff; }
-        .col-compact { min-width: 160px; } /* competitor columns */
-      </style>
-
-      <table class="min-w-[1400px] w-full text-sm text-left text-gray-700">
-        <thead class="bg-gray-100 text-xs text-gray-800 uppercase font-semibold">
+      <table class="min-w-[1200px] w-full text-sm text-left text-gray-700">
+        <thead class="bg-indigo-50 text-xs text-gray-800 uppercase font-semibold">
           <tr>
-            <th class="sticky-col sticky-feature px-4 py-3">Metric (Investor → Founder → User)</th>
-            <th class="sticky-col sticky-keynate px-4 py-3 text-indigo-600">Keynate</th>
-            <th class="px-4 py-3 col-compact">Agency / Freelancer</th>
+            <th class="sticky-col sticky-feature px-4 py-3">Metric</th>
+            <th class="sticky-col sticky-keynate px-4 py-3 text-indigo-700 font-bold">Keynate</th>
+            <th class="px-4 py-3 col-compact">Agency</th>
             <th class="px-4 py-3 col-compact">WordPress</th>
             <th class="px-4 py-3 col-compact">Wix</th>
             <th class="px-4 py-3 col-compact">Shopify</th>
-            <th class="px-4 py-3 col-compact">Squarespace</th>
             <th class="px-4 py-3 col-compact">ChatGPT</th>
-            <th class="px-4 py-3 col-compact">Firebase Studio</th>
-            <th class="px-4 py-3 col-compact">Claude</th>
           </tr>
         </thead>
+
         <tbody>
-
-          <!-- Time to Market -->
+          <!-- Time -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Time-to-Market</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Minutes → full stack live</td>
-            <td class="px-4 py-3">Weeks → depends on scope</td>
-            <td class="px-4 py-3">Days–weeks (setup)</td>
-            <td class="px-4 py-3">Minutes (site only)</td>
-            <td class="px-4 py-3">Hours–days (store)</td>
-            <td class="px-4 py-3">Minutes (site)</td>
-            <td class="px-4 py-3">Immediate (content only)</td>
-            <td class="px-4 py-3">Fast backend (dev needed)</td>
-            <td class="px-4 py-3">Immediate answers</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Time to Launch</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Minutes → Full-stack deploy</td>
+            <td class="px-4 py-3">Weeks → manual dev</td>
+            <td class="px-4 py-3">Days–weeks</td>
+            <td class="px-4 py-3">Minutes (frontend only)</td>
+            <td class="px-4 py-3">Hours (store setup)</td>
+            <td class="px-4 py-3">Instant (no product deploy)</td>
           </tr>
 
-          <!-- Cost to Launch -->
+          <!-- Money -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Cost to Launch</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">Predictable subscription + hosting</td>
-            <td class="px-4 py-3">High (one-time dev fees)</td>
-            <td class="px-4 py-3">Low core + plugin costs</td>
-            <td class="px-4 py-3">Low monthly</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Cost Efficiency</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Predictable SaaS + hosting</td>
+            <td class="px-4 py-3">High one-time cost</td>
+            <td class="px-4 py-3">Low + plugin expenses</td>
+            <td class="px-4 py-3">Monthly plan</td>
             <td class="px-4 py-3">Monthly + transaction fees</td>
-            <td class="px-4 py-3">Low monthly</td>
-            <td class="px-4 py-3">Free / API cost</td>
-            <td class="px-4 py-3">Pay-as-you-go</td>
-            <td class="px-4 py-3">API licensing</td>
+            <td class="px-4 py-3">Free / API usage</td>
           </tr>
 
-          <!-- Revenue Model / Predictability -->
+          <!-- Features -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Revenue Predictability (Investor)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Recurring SaaS + hosting upsell</td>
-            <td class="px-4 py-3">Project fees (one-time) — variable</td>
-            <td class="px-4 py-3">Services + plugins (variable)</td>
-            <td class="px-4 py-3">Recurring (low ARPU)</td>
-            <td class="px-4 py-3">Recurring + transaction (reliable)</td>
-            <td class="px-4 py-3">Recurring (basic)</td>
-            <td class="px-4 py-3">Not productized</td>
-            <td class="px-4 py-3">Infra billing (variable)</td>
-            <td class="px-4 py-3">Not productized</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Features</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">All-in-one (blog, news, e-com, app)</td>
+            <td class="px-4 py-3">Custom build (per project)</td>
+            <td class="px-4 py-3">Plugins based</td>
+            <td class="px-4 py-3">Website only</td>
+            <td class="px-4 py-3">E-commerce only</td>
+            <td class="px-4 py-3">⚠️ Text generation only</td>
           </tr>
 
-          <!-- Features Coverage -->
+          <!-- SEO -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Feature Coverage (news, ecom, blog, apps)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ All-in-one (13+ content types)</td>
-            <td class="px-4 py-3">✅ Custom (build per project)</td>
-            <td class="px-4 py-3">✅ With plugins</td>
-            <td class="px-4 py-3">✅ Website features</td>
-            <td class="px-4 py-3">✅ E-commerce focused</td>
-            <td class="px-4 py-3">✅ Website templates</td>
-            <td class="px-4 py-3">⚠️ Content generation only</td>
-            <td class="px-4 py-3">⚠️ Backend only</td>
-            <td class="px-4 py-3">⚠️ Text & reasoning</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">SEO & Indexing</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Built-in schema, AMP, Instant Indexing</td>
+            <td class="px-4 py-3">Plugin-based</td>
+            <td class="px-4 py-3">Basic (Yoast)</td>
+            <td class="px-4 py-3">Basic</td>
+            <td class="px-4 py-3">Basic</td>
+            <td class="px-4 py-3">❌ None</td>
           </tr>
 
-          <!-- Developer Dependency -->
+          <!-- Customization -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Developer Dependency (Founder/User)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">Low — AI admin + optional certified devs</td>
-            <td class="px-4 py-3">High (dev required)</td>
-            <td class="px-4 py-3">Medium–High</td>
-            <td class="px-4 py-3">Low</td>
-            <td class="px-4 py-3">Medium</td>
-            <td class="px-4 py-3">Low–Medium</td>
-            <td class="px-4 py-3">High (devs use it)</td>
-            <td class="px-4 py-3">High (dev required)</td>
-            <td class="px-4 py-3">High (dev interaction)</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Customization</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Full-stack editable + AI admin</td>
+            <td class="px-4 py-3">Unlimited (dev-led)</td>
+            <td class="px-4 py-3">Plugin-limited</td>
+            <td class="px-4 py-3">Template-based</td>
+            <td class="px-4 py-3">Limited themes</td>
+            <td class="px-4 py-3">Text only</td>
           </tr>
 
-          <!-- Time & Money (merged investor pain) -->
+          <!-- Scaling -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Time & Money (Founder pain)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Saves months & lowers TCO via automation</td>
-            <td class="px-4 py-3">Expensive initial, flexible later</td>
-            <td class="px-4 py-3">Lower tools cost, plugin overhead</td>
-            <td class="px-4 py-3">Low initial, platform fees persist</td>
-            <td class="px-4 py-3">Low initial</td>
-            <td class="px-4 py-3">Free for content — not product</td>
-            <td class="px-4 py-3">Dev costs for productization</td>
-            <td class="px-4 py-3">Dev infra costs</td>
-          </tr>
-
-          <!-- Migration -->
-          <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Migration from WP/Wix/Shopify</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Automated migration tools</td>
-            <td class="px-4 py-3">Manual / plugin-based</td>
-            <td class="px-4 py-3">Limited</td>
-            <td class="px-4 py-3">Import tools</td>
-            <td class="px-4 py-3">Partial</td>
-            <td class="px-4 py-3">N/A</td>
-            <td class="px-4 py-3">N/A</td>
-            <td class="px-4 py-3">N/A</td>
-          </tr>
-
-          <!-- Scalability -->
-          <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Scalability & Ops Risk</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">Auto-scale + manual controls (VPS/Cloud)</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Scalability</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Auto-scale (VPS/Cloud)</td>
             <td class="px-4 py-3">Hosting-dependent</td>
-            <td class="px-4 py-3">Platform-managed (limited)</td>
-            <td class="px-4 py-3">Shopify infra (strong)</td>
+            <td class="px-4 py-3">Limited</td>
             <td class="px-4 py-3">Platform-managed</td>
-            <td class="px-4 py-3">No infra</td>
-            <td class="px-4 py-3">Serverless (infra)</td>
-            <td class="px-4 py-3">No infra</td>
+            <td class="px-4 py-3">Strong infra</td>
+            <td class="px-4 py-3">Serverless (no product infra)</td>
           </tr>
 
-          <!-- AI Capability (product-grade) -->
+          <!-- AI -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">AI Capability (product)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">Context-aware code & content AI (admin)</td>
-            <td class="px-4 py-3">Plugin-based (limited)</td>
-            <td class="px-4 py-3">Wix ADI (site only)</td>
-            <td class="px-4 py-3">Limited apps</td>
-            <td class="px-4 py-3">No</td>
-            <td class="px-4 py-3">Strong text generation (no deploy)</td>
-            <td class="px-4 py-3">Infra / DB (no gen UI)</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">AI Support</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Context-aware AI (code + content)</td>
+            <td class="px-4 py-3">⚠️ Plugin-based</td>
+            <td class="px-4 py-3">Wix ADI only</td>
+            <td class="px-4 py-3">❌ Minimal</td>
+            <td class="px-4 py-3">❌ None</td>
             <td class="px-4 py-3">Strong reasoning (no deploy)</td>
           </tr>
 
-          <!-- SEO & Indexing -->
+          <!-- Marketplace -->
           <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">SEO & Instant Indexing</td>
-            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Schema, RSS, AMP, Instant Indexing</td>
-            <td class="px-4 py-3">Plugin-dependent</td>
-            <td class="px-4 py-3">Basic</td>
-            <td class="px-4 py-3">Basic</td>
-            <td class="px-4 py-3">Basic</td>
-            <td class="px-4 py-3">No</td>
-            <td class="px-4 py-3">No</td>
-            <td class="px-4 py-3">No</td>
+            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Marketplace Ecosystem</td>
+            <td class="sticky-col sticky-keynate px-4 py-3 text-green-600 font-semibold">✅ Dev + user marketplace</td>
+            <td class="px-4 py-3">❌ No shared ecosystem</td>
+            <td class="px-4 py-3">⚠️ Plugin marketplace</td>
+            <td class="px-4 py-3">⚠️ App store</td>
+            <td class="px-4 py-3">✅ App marketplace</td>
+            <td class="px-4 py-3">❌ Not applicable</td>
           </tr>
-
-          <!-- Monetization / Upsell -->
-          <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Monetization Upside</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">Hosting, AI add-ons, dev services, marketplace fees</td>
-            <td class="px-4 py-3">Project & retainer fees</td>
-            <td class="px-4 py-3">Plugins & services</td>
-            <td class="px-4 py-3">Plans + app fees</td>
-            <td class="px-4 py-3">Add-ons</td>
-            <td class="px-4 py-3">API subscriptions (indirect)</td>
-            <td class="px-4 py-3">Infra usage fees</td>
-            <td class="px-4 py-3">API licensing</td>
-          </tr>
-
-          <!-- Founder: Control & Speed -->
-          <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Founder: Control & Speed</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">High control + rapid deploy (no dev)</td>
-            <td class="px-4 py-3">High control but slow (dev-led)</td>
-            <td class="px-4 py-3">High control (dev required)</td>
-            <td class="px-4 py-3">Low control (easy)</td>
-            <td class="px-4 py-3">Low–medium</td>
-            <td class="px-4 py-3">High control (dev use)</td>
-            <td class="px-4 py-3">High control (dev use)</td>
-            <td class="px-4 py-3">High control (dev use)</td>
-          </tr>
-
-          <!-- Risk Profile -->
-          <tr class="border-t">
-            <td class="sticky-col sticky-feature px-4 py-3 font-medium">Risk Profile (Investor)</td>
-            <td class="sticky-col sticky-keynate px-4 py-3">Execution risk (AI+infra) — high upside if executed</td>
-            <td class="px-4 py-3">Mature market — fragmentation risk</td>
-            <td class="px-4 py-3">Low execution risk (low upside)</td>
-            <td class="px-4 py-3">Strong infra but competitive</td>
-            <td class="px-4 py-3">Low–medium</td>
-            <td class="px-4 py-3">Model risk (not product)</td>
-            <td class="px-4 py-3">Vendor infra risk</td>
-            <td class="px-4 py-3">Model/platform risk</td>
-          </tr>
-
         </tbody>
       </table>
     </div>
 
-    <!-- Mobile: stacked cards (compact & scannable) -->
+    <!-- Mobile Cards -->
     <div class="md:hidden space-y-4">
-      <!-- Generate a card per metric (short summary). Example for three; replicate similarly. -->
       <div class="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <div class="flex justify-between items-center mb-2">
-          <div class="font-medium">Time-to-Market</div>
-          <div class="text-xs text-gray-500">Founder</div>
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div class="p-3 bg-indigo-50 rounded">
-            <div class="text-xs text-indigo-700 font-semibold">Keynate</div>
-            <div class="text-sm">Minutes → full-stack</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">Agency</div>
-            <div class="text-sm">Weeks → scoped</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">WordPress</div>
-            <div class="text-sm">Days–weeks</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">Wix</div>
-            <div class="text-sm">Minutes (site)</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <div class="flex justify-between items-center mb-2">
-          <div class="font-medium">Time & Money (Founder)</div>
-          <div class="text-xs text-gray-500">Pain</div>
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div class="p-3 bg-indigo-50 rounded">
-            <div class="text-xs text-indigo-700 font-semibold">Keynate</div>
-            <div class="text-sm">Saves months, predictable TCO</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">Agency</div>
-            <div class="text-sm">Expensive upfront</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">Shopify</div>
-            <div class="text-sm">Platform fees</div>
-          </div>
-          <div class="p-3 bg-gray-50 rounded">
-            <div class="text-xs text-gray-600 font-semibold">ChatGPT</div>
-            <div class="text-sm">No productization</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more cards for other metrics (Developer Dependency, Migration, AI, SEO, Monetization, Risk) following above pattern -->
-    </div>
-
-    <!-- Advantages & Market Gaps (colored) -->
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-sm border border-green-200">
-        <h3 class="text-xl font-semibold mb-3 text-green-800">Our Advantages</h3>
-        <ul class="text-green-800 space-y-2">
-          <li>✅ <strong>One-click full-stack</strong> (backend + frontend + admin)</li>
-          <li>✅ <strong>AI-driven</strong> admin that modifies code & content</li>
-          <li>✅ <strong>Predictable revenue</strong> — subscription + hosting upsell</li>
-          <li>✅ <strong>Automated migrations</strong> from major platforms</li>
-        </ul>
-      </div>
-
-      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-sm border border-blue-200">
-        <h3 class="text-xl font-semibold mb-3 text-blue-800">Market Gaps We're Filling</h3>
-        <ul class="text-blue-800 space-y-2">
-          <li>• No product combines deployable full-stack + AI automation</li>
-          <li>• Builders force plugin sprawl; Keynate centralizes features</li>
-          <li>• AI vendors don’t ship production apps — we convert AI → product</li>
-          <li>• Migration & scaling remain painful — we automate both</li>
+        <h3 class="font-semibold mb-2 text-indigo-700">Keynate vs Others</h3>
+        <ul class="text-sm text-gray-700 space-y-2">
+          <li><strong>Time:</strong> Minutes to live (vs weeks elsewhere)</li>
+          <li><strong>Cost:</strong> Predictable SaaS (vs custom dev cost)</li>
+          <li><strong>SEO:</strong> Built-in schema + instant indexing</li>
+          <li><strong>AI:</strong> Full product-level AI (code + content)</li>
+          <li><strong>Scaling:</strong> Auto VPS/Cloud scaling</li>
+          <li><strong>Marketplace:</strong> Developer + client ecosystem</li>
         </ul>
       </div>
     </div>
 
+    <!-- Highlights -->
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
+      <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200 shadow-sm">
+        <h3 class="text-lg font-semibold text-green-800 mb-3">Keynate Advantages</h3>
+        <ul class="space-y-1 text-green-800 text-sm">
+          <li>✅ One-click full-stack build (backend + frontend)</li>
+          <li>✅ AI-driven customization & content</li>
+          <li>✅ Strong SEO + instant indexing</li>
+          <li>✅ Developer + user marketplace ecosystem</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200 shadow-sm">
+        <h3 class="text-lg font-semibold text-blue-800 mb-3">Market Gap Filled</h3>
+        <ul class="space-y-1 text-blue-800 text-sm">
+          <li>• No one offers deployable full-stack + AI automation</li>
+          <li>• Fragmented builders — Keynate unifies stack</li>
+          <li>• AI tools stop at text — Keynate delivers products</li>
+          <li>• Seamless scaling + migration automation</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
-
 
 
 
