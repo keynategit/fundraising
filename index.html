@@ -20,6 +20,9 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
+                    screens: {
+                        'xs': '475px',
+                    }
                 }
             }
         }
@@ -40,7 +43,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
         /* ===== PROGRESS BAR STYLES ===== */
         .progress-bar {
             height: 4px;
@@ -55,12 +57,10 @@
             width: 0%;
             transition: width 0.3s ease;
         }
-
         /* ===== ICON STYLES ===== */
         .icon-bg {
             background: linear-gradient(135deg, #2563eb, #7c3aed);
         }
-
         /* ===== DROPDOWN MENU STYLES ===== */
         .dropdown-menu {
             display: none;
@@ -73,6 +73,8 @@
             min-width: 200px;
             z-index: 100;
             padding: 8px 0;
+            max-height: 70vh;
+            overflow-y: auto;
         }
         .dropdown-menu.show {
             display: block;
@@ -91,7 +93,6 @@
             background-color: #f3f4f6;
             color: #2563eb;
         }
-
         /* ===== NAVIGATION DOTS STYLES ===== */
         .nav-indicator {
             position: fixed;
@@ -117,7 +118,6 @@
         .nav-dot:hover {
             background-color: #93c5fd;
         }
-
         /* ===== ANIMATION STYLES ===== */
         .fade-in {
             animation: fadeIn 0.8s ease-in-out;
@@ -126,19 +126,44 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         /* ===== NAVIGATION BUTTON STYLES ===== */
         .nav-btn {
             cursor: pointer;
+            white-space: nowrap;
         }
         .nav-btn.active {
             background-color: #2563eb;
             color: white;
         }
-
         /* ===== SMOOTH SCROLLING ===== */
         html {
             scroll-behavior: smooth;
+        }
+        /* ===== FIXED NAVIGATION ISSUE ===== */
+        .nav-btn, .nav-dot, .dropdown-item {
+            transition: all 0.2s ease;
+        }
+        /* ===== RESPONSIVE NAVBAR STYLES ===== */
+        .responsive-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 1024px) {
+            .responsive-nav {
+                gap: 2px;
+            }
+            .nav-btn {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 768px) {
+            .responsive-nav {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -151,7 +176,8 @@
                 <span class="text-xl font-bold">Keynate</span>
             </div>
             <div class="flex items-center space-x-4">
-                <div class="hidden md:flex space-x-1">
+                <!-- Responsive Navigation Menu -->
+                <div class="responsive-nav">
                     <button class="nav-btn px-3 py-1 rounded-full text-sm transition-all" data-slide="0">Intro</button>
                     <button class="nav-btn px-3 py-1 rounded-full text-sm transition-all" data-slide="1">Problem</button>
                     <button class="nav-btn px-3 py-1 rounded-full text-sm transition-all" data-slide="2">Solution</button>
@@ -168,7 +194,7 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden relative">
+                <div class="lg:hidden relative">
                     <button id="mobile-menu-btn" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
@@ -191,7 +217,7 @@
                     </div>
                 </div>
                 
-                <div class="text-sm text-gray-500">
+                <div class="text-sm text-gray-500" style="white-space: nowrap;">
                     <span id="current-slide">1</span> / <span id="total-slides">13</span>
                 </div>
             </div>
@@ -202,7 +228,7 @@
     </div>
 
     <!-- Navigation Dots -->
-    <div class="nav-indicator hidden md:block">
+    <div class="nav-indicator hidden lg:block">
         <button class="nav-dot" data-slide="0"></button>
         <button class="nav-dot" data-slide="1"></button>
         <button class="nav-dot" data-slide="2"></button>
@@ -1125,15 +1151,13 @@
                 prevBtn.disabled = currentSlide === 0;
                 nextBtn.disabled = currentSlide === totalSlides - 1;
                 
-                // Update nav buttons active state
+                // Update nav buttons active state - FIXED: Directly set active state
                 navButtons.forEach(btn => {
                     const slideIndex = parseInt(btn.getAttribute('data-slide'));
                     if (slideIndex === currentSlide) {
-                        btn.classList.add('bg-primary', 'text-white');
-                        btn.classList.remove('text-gray-600', 'hover:bg-gray-100');
+                        btn.classList.add('active');
                     } else {
-                        btn.classList.remove('bg-primary', 'text-white');
-                        btn.classList.add('text-gray-600', 'hover:bg-gray-100');
+                        btn.classList.remove('active');
                     }
                 });
                 
@@ -1163,6 +1187,7 @@
                     const slide = slides[slideIndex];
                     const slideTop = slide.offsetTop;
                     
+                    // Use smooth scrolling with improved performance
                     window.scrollTo({
                         top: slideTop,
                         behavior: 'smooth'
@@ -1235,13 +1260,13 @@
                 }
             });
             
-            // Scroll-based navigation
+            // Improved scroll-based navigation
+            let scrollThrottleTimeout;
             window.addEventListener('scroll', function() {
-                if (!isScrolling) {
-                    isScrolling = true;
-                    
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(function() {
+                if (!scrollThrottleTimeout) {
+                    scrollThrottleTimeout = setTimeout(function() {
+                        scrollThrottleTimeout = null;
+                        
                         // Find which slide is currently in view
                         const scrollPosition = window.scrollY + (window.innerHeight / 2);
                         
@@ -1257,8 +1282,6 @@
                                 break;
                             }
                         }
-                        
-                        isScrolling = false;
                     }, 100);
                 }
             }, { passive: true });
