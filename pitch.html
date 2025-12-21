@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keynate | Investor Pitch</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+<!-- Toggle Button -->
+<div class="fixed top-6 right-6 z-50">
+    <button
+        onclick="toggleDarkMode()"
+        class="px-4 py-2 rounded-lg text-sm font-medium
+               bg-gray-100 text-gray-900
+               dark:bg-gray-800 dark:text-gray-100
+               shadow hover:shadow-md transition">
+        🌙 / ☀️
+    </button>
+</div>
+
+<div class="min-h-screen px-6 py-16 flex justify-center">
+    <div class="max-w-4xl w-full space-y-20">
+
+        <!-- ================= PITCH ================= -->
+        <section>
+            <h1 class="text-2xl font-semibold mb-10">Keynate</h1>
+
+            <p class="text-4xl md:text-5xl font-semibold leading-tight mb-8">
+                Imagine if launching a production-ready website and mobile app
+                took <span class="text-blue-600 dark:text-blue-400">15 minutes</span>
+                instead of six months.
+            </p>
+
+            <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                That’s what Keynate does. We provide category-based, production-ready
+                websites and apps that deploy on a customer’s own server,
+                with only branding and configuration required.
+            </p>
+
+            <p class="text-lg md:text-xl font-medium">
+                This isn’t a prototype or a no-code tool —
+                <span class="font-semibold">
+                    it’s a real, scalable system already used by paying customers.
+                </span>
+            </p>
+        </section>
+
+        <!-- ================= Q&A ================= -->
+        <section class="space-y-14">
+
+            <h2 class="text-3xl font-semibold">Investor Questions</h2>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ What problem are you solving?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Building a production-ready website and mobile app today takes months,
+                    large engineering teams, and high upfront cost.
+                    Most founders fail before they even reach launch.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ What exactly does Keynate do?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Keynate offers ready-made, category-based software products.
+                    Founders select a category, add branding and configuration,
+                    and go live on their own server in under 15 minutes.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ Is this a no-code or website builder?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
+                    No. Keynate delivers full production systems —
+                    not templates, demos, or builders.
+                    These are real applications used by paying customers.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ Who is this for?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Founders, businesses, media companies, and enterprises
+                    that want to launch fast without hiring large engineering teams.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ Why is this difficult to build?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Because production software requires infrastructure, security,
+                    deployment automation, scalability, and years of engineering effort —
+                    all of which we’ve already built.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-3">❓ Why will Keynate win?</h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    We reduce time-to-market from months to minutes,
+                    deploy on customer-owned servers,
+                    and eliminate vendor lock-in.
+                </p>
+            </div>
+
+        </section>
+
+        <footer class="pt-10 text-sm text-gray-500 dark:text-gray-400">
+            Production-ready • Own server • Go live in minutes
+        </footer>
+
+    </div>
+</div>
+
+<script>
+    function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+    }
+</script>
+
+</body>
+</html>
