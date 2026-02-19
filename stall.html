@@ -29,6 +29,7 @@ flex-direction:column;
 justify-content:space-between;
 backdrop-filter:blur(12px);
 transition:.4s ease;
+min-height:0; /* ✅ FIX: prevents iframe collapse on big screens */
 }
 
 .card:hover{
@@ -133,8 +134,12 @@ Infrastructure layer for online businesses
 
 <div class="label">Live Production System</div>
 
-<div class="flex-1">
-<iframe src="https://www.youtube.com/embed/C93Q7JpKK4w?autoplay=1&mute=1&loop=1&playlist=C93Q7JpKK4w"></iframe>
+<div class="flex-1 min-h-0"> <!-- ✅ FIX -->
+<iframe
+src="https://www.youtube.com/embed/C93Q7JpKK4w?autoplay=1&mute=1&loop=1&playlist=C93Q7JpKK4w"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
 </div>
 
 <div class="text-xs text-slate-400 mt-2">
@@ -159,7 +164,6 @@ No scalable production system from Day One
 </ul>
 </div>
 
-
 <!-- SOLUTION -->
 <div class="col-span-3 card">
 <div class="label">Keynate Solution</div>
@@ -175,7 +179,6 @@ Infrastructure — not a builder
 </li>
 </ul>
 </div>
-
 
 <!-- TRACTION -->
 <div class="col-span-3 card">
@@ -193,7 +196,6 @@ Infrastructure — not a builder
 <li>✓ Real businesses running</li>
 </ul>
 </div>
-
 
 <!-- WHY NOW -->
 <div class="col-span-3 card">
@@ -215,13 +217,11 @@ Infrastructure layer moment is now
 <!-- FOOTER -->
 <div class="col-span-12 card flex-row items-center justify-between">
 
-<!-- LEFT -->
 <div class="flex items-center gap-8">
 <span class="text-2xl font-bold tracking-wide">KEYNATE</span>
 <span class="text-cyan-300">keynate.com</span>
 </div>
 
-<!-- RIGHT -->
 <div class="flex items-center gap-14 text-sm">
 
 <div>
@@ -234,7 +234,6 @@ Infrastructure layer moment is now
 <span class="text-xs ml-2">Pre-Seed Ask</span>
 </div>
 
-<!-- CONTACT -->
 <div class="flex flex-col text-slate-300 leading-tight">
 <span>📧 kanhaiyakumar@keynate.com</span>
 <span class="text-cyan-300 font-semibold">
