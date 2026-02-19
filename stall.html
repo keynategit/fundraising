@@ -149,25 +149,25 @@ Infrastructure layer for online businesses
 
 <div class="label">Live Production System</div>
 
-<div class="flex-1 min-h-0 relative overflow-hidden">
+<div class="flex-1 min-h-0 overflow-hidden flex items-center justify-center">
 
-<video id="demoVideo"
-autoplay
-muted
-loop
-playsinline
-preload="auto"
-class="absolute top-0 left-0 w-full h-full rounded-[14px]"
-style="">
+  <video id="demoVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="w-full h-full rounded-[14px]"
+    >
 
-<source src="https://www.galaxyfounder.com/view/stall/keynate-product-demo-1.mp4" type="video/mp4">
-</video>
+    <source src="stall-demo-video.mp4" type="video/mp4">
+  </video>
 
-<!-- Controls -->
-<div class="video-controls">
-<button class="control-btn" onclick="togglePlay()">Play/Pause</button>
-<button class="control-btn" onclick="toggleMute()">Mute</button>
-</div>
+  <!-- Controls -->
+  <div class="video-controls">
+    <button class="control-btn" onclick="togglePlay()">Play/Pause</button>
+    <button class="control-btn" onclick="toggleMute()">Mute</button>
+  </div>
 
 </div>
 
@@ -233,11 +233,7 @@ Infrastructure layer moment
 
 <div class="flex items-center gap-8">
 <span class="text-2xl font-bold tracking-wide">KEYNATE</span>
-<span class="text-cyan-300">keynate.com
-
-    <a href="https://www.galaxyfounder.com/view/stall/keynate-product-demo-1.mp4" target="_blank" rel="noopener noreferrer">.</a>
-
-</span>
+<span class="text-cyan-300">keynate.com</span>
 </div>
 
 <div class="flex items-center gap-14 text-sm">
@@ -272,7 +268,6 @@ function toggleMute(){
   video.muted = !video.muted;
 }
 </script>
-
 
 </body>
 </html>
