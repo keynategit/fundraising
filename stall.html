@@ -149,25 +149,21 @@ Infrastructure layer for online businesses
 
 <div class="label">Live Production System</div>
 
-<div class="flex-1 min-h-0 overflow-hidden flex items-center justify-center">
+<div class="flex-1 min-h-0 overflow-hidden">
 
   <video id="demoVideo"
     autoplay
     muted
     loop
+    controls
     playsinline
-    preload="auto"
-    class="w-full h-full rounded-[14px]"
-    >
+    width="100%"
+    height="100%"
+    style="width:100%; height:100%; border-radius:14px;">
 
     <source src="stall-demo-video.mp4" type="video/mp4">
-  </video>
 
-  <!-- Controls -->
-  <div class="video-controls">
-    <button class="control-btn" onclick="togglePlay()">Play/Pause</button>
-    <button class="control-btn" onclick="toggleMute()">Mute</button>
-  </div>
+  </video>
 
 </div>
 
