@@ -70,11 +70,26 @@ background:linear-gradient(to right,transparent,#00f6ff55,transparent);
 margin:10px 0;
 }
 
-iframe{
-width:100%;
-height:100%;
-border-radius:14px;
-border:0;
+.video-controls{
+position:absolute;
+bottom:12px;
+right:12px;
+display:flex;
+gap:10px;
+z-index:10;
+}
+
+.control-btn{
+background:rgba(0,0,0,.55);
+border:1px solid rgba(0,246,255,.4);
+padding:6px 12px;
+border-radius:8px;
+font-size:12px;
+cursor:pointer;
+}
+
+.control-btn:hover{
+background:rgba(0,246,255,.15);
 }
 
 @keyframes glow{
@@ -129,19 +144,30 @@ Infrastructure layer for online businesses
 
 </div>
 
-<!-- DEMO (VIMEO RESPONSIVE FIXED) -->
+<!-- DEMO VIDEO -->
 <div class="col-span-7 card">
 
 <div class="label">Live Production System</div>
 
 <div class="flex-1 min-h-0 relative overflow-hidden">
 
-<iframe
-src="https://player.vimeo.com/video/1166221805?autoplay=1&muted=1&loop=1&autopause=0&title=0&byline=0&portrait=0&badge=0"
-allow="autoplay; fullscreen; picture-in-picture"
-allowfullscreen
-class="absolute top-0 left-0 w-full h-full">
-</iframe>
+<video id="demoVideo"
+autoplay
+muted
+loop
+playsinline
+preload="auto"
+class="absolute top-0 left-0 w-full h-full rounded-[14px]"
+style="object-fit:fill;">
+
+<source src="stall-demo-video.mp4" type="video/mp4">
+</video>
+
+<!-- Controls -->
+<div class="video-controls">
+<button class="control-btn" onclick="togglePlay()">Play/Pause</button>
+<button class="control-btn" onclick="toggleMute()">Mute</button>
+</div>
 
 </div>
 
@@ -154,13 +180,12 @@ Real customers. Real revenue. Running today.
 <!-- PROBLEM -->
 <div class="col-span-3 card">
 <div class="label">Problem Today</div>
-
 <ul class="text-sm text-slate-300 space-y-2">
 <li>👨‍💻 Agencies are slow & expensive</li>
-<li>🧩 No-code & AI tools have limitations and don’t deliver real production systems</li>
-<li>⚙️ Fragmented tools & complex integrations</li>
+<li>🧩 No-code & AI tools limitations</li>
+<li>⚙️ Fragmented tools</li>
 <li>📆 2–6 month launch timelines</li>
-<li>💰 High upfront cost before validation</li>
+<li>💰 High upfront cost</li>
 <li class="text-red-300 font-semibold">
 No scalable production system from Day One
 </li>
@@ -170,13 +195,12 @@ No scalable production system from Day One
 <!-- SOLUTION -->
 <div class="col-span-3 card">
 <div class="label">Keynate Solution</div>
-
 <ul class="text-sm space-y-2">
 <li>✅ Instant production deployment</li>
-<li>✅ Scalable system from Day 1</li>
-<li>✅ Website + Android + iOS live</li>
-<li>✅ Backend, admin & APIs included</li>
-<li>✅ Payments, users & analytics built-in</li>
+<li>✅ Scalable system Day 1</li>
+<li>✅ Web + Android + iOS</li>
+<li>✅ Backend & APIs included</li>
+<li>✅ Payments & analytics</li>
 <li class="text-cyan-300 font-semibold">
 Infrastructure — not a builder
 </li>
@@ -186,33 +210,20 @@ Infrastructure — not a builder
 <!-- TRACTION -->
 <div class="col-span-3 card">
 <div class="label">Traction</div>
-
 <div class="stat">40+</div>
 <div class="text-xs text-slate-400">paying customers</div>
-
-<div class="divider"></div>
-
-<ul class="text-xs text-slate-300 space-y-1">
-<li>✓ Live production deployments</li>
-<li>✓ Bootstrapped revenue</li>
-<li>✓ Repeatable platform</li>
-<li>✓ Real businesses running</li>
-</ul>
 </div>
 
 <!-- WHY NOW -->
 <div class="col-span-3 card">
 <div class="label">Why Now</div>
-
 <ul class="text-sm text-slate-300 space-y-2">
-<li>🚀 Explosion of online entrepreneurship</li>
-<li>⚡ Speed to market is competitive advantage</li>
-<li>📉 Founders tired of complex tech stacks</li>
-<li>🌍 Global shift toward digital businesses</li>
-<li>🧠 Demand moving from tools → systems</li>
-<li>📈 Subscription economy accelerating</li>
+<li>🚀 Online entrepreneurship boom</li>
+<li>⚡ Speed = advantage</li>
+<li>📉 Tech stack fatigue</li>
+<li>🌍 Digital-first world</li>
 <li class="text-cyan-300 font-semibold">
-Infrastructure layer moment is now
+Infrastructure layer moment
 </li>
 </ul>
 </div>
@@ -226,7 +237,6 @@ Infrastructure layer moment is now
 </div>
 
 <div class="flex items-center gap-14 text-sm">
-
 <div>
 <span class="stat">$500B+</span>
 <span class="text-xs ml-2">Market</span>
@@ -239,14 +249,25 @@ Infrastructure layer moment is now
 
 <div class="flex flex-col text-slate-300 leading-tight">
 <span>📧 kanhaiyakumar@keynate.com</span>
-<span class="text-cyan-300 font-semibold">
-📱 +91-8051902909
-</span>
+<span class="text-cyan-300 font-semibold">📱 +91-8051902909</span>
 </div>
-
 </div>
 
 </div>
 </div>
+
+<script>
+const video = document.getElementById("demoVideo");
+
+function togglePlay(){
+  if(video.paused){ video.play(); }
+  else{ video.pause(); }
+}
+
+function toggleMute(){
+  video.muted = !video.muted;
+}
+</script>
+
 </body>
 </html>
